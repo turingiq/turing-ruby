@@ -1,0 +1,2 @@
+class VisualAPIException < Exception
+end
