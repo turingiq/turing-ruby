@@ -22,12 +22,17 @@ module Turing
       end
     end
 
-    def search(url, crop=nil)
+    def search(url, crop=nil, filters=nil)
       begin
         request = @mode=="live" ? "similar" : "demo-similar"
         requested_url = @base_url+"#{request}/search"
         crop_size = crop.join(",") if !crop.nil?
-        request = HTTParty.post(requested_url, headers: @headers, :body => {:url=>"#{url}", :crop=>"#{crop_size}"})
+        filters = filters if !filters.nil?
+        if !filters.nil?
+          request = HTTParty.post(requested_url, headers: @headers, :body => {:url=>"#{url}", :crop=>"#{crop_size}", :filter1=>"#{filters[0]}", :filter2=>"#{filters[1]}", :filter3=>"#{filters[2]}"})
+        else
+          request = HTTParty.post(requested_url, headers: @headers, :body => { :url=>"#{url}", :crop=>"#{crop_size}"})
+        end
         response_data = request.body
         data = JSON.parse(response_data)
         data
