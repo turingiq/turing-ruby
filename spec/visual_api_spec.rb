@@ -31,20 +31,20 @@ describe Turing::VisualAPI do
 		end
 
 		it "deleted an image from index " do
-			@image = @visual.create("https://images-na.ssl-images-amazon.com/images/I/71AfbkjR6AL._SX522_.jpg",1, ['men', 'shirt', 'casual-shirts'])
+			@image = @visual.create("https://storage.googleapis.com/turingiq/unit_test_images/backpack-1.jpg",1, ['men', 'shirt', 'casual-shirts'])
 			@response = @visual.delete(1)
 			expect(@response).to eq({"success"=>true})
 		end
 
 		it "crops an image automatically" do
-			@response = @visual.auto_crop("https://cdn.shopify.com/s/files/1/0123/0854/5594/products/238_480x480.jpg?v=1529577411")
-			expect(@response["boxes"][0]).to eq([188, 256, 656, 928])
-			expect(@response["boxes"][1]).to eq([379, 343, 651, 870])
+			@response = @visual.auto_crop("https://storage.googleapis.com/turingiq/unit_test_images/backpack-1.jpg")
+			expect(@response["boxes"][0]).to eq([57, 92, 293, 480])
+			expect(@response["boxes"][1]).to eq([55, 114, 293, 461])
 		end
 
 		it "searches images based on given url" do
 			@response = @visual.search("https://images-na.ssl-images-amazon.com/images/I/71AfbkjR6AL._SX522_.jpg")
-			expect(@response["similar"].count).to be_positive
+			expect(@response["similar"]).to be_an_instance_of(Array)
 		end
 
 		it "searches similar images" do
