@@ -6,8 +6,8 @@ require "turing_api/version"
 Gem::Specification.new do |spec|
   spec.name          = "turing_api"
   spec.version       = TuringAPI::VERSION
-  spec.authors       = ["Harvesh Kumar"]
-  spec.email         = ["harvesh@turingiq.com"]
+  spec.authors       = ["Turing Analytics"]
+  spec.email         = ["mail@turingiq.com"]
 
   spec.summary       = "A gem for Turing App API."
   spec.description   = "Turing Analytics is driven by a vision to develop solutions powered by machine learning to help businesses make data driven decisions."
