@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 require './lib/turing_api'
 
 RSpec.describe TuringAPI do

@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Turing Analytics"]
   spec.email         = ["mail@turingiq.com"]
 
-  spec.summary       = "A gem for Turing App API."
+  spec.summary       = "A gem for Turing Analytics API."
   spec.description   = "Turing Analytics is driven by a vision to develop solutions powered by machine learning to help businesses make data driven decisions."
   spec.homepage      = "https://api.turingiq.com/doc/"
   spec.license       = "MIT"
