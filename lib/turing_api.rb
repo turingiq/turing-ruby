@@ -1,6 +1,5 @@
 require "turing_api/version"
 require 'httparty'
-require 'byebug'
 require 'json'
 require './lib/visual_api_exception'
 
