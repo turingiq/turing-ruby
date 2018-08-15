@@ -1,7 +1,7 @@
 require "turing_api/version"
 require 'httparty'
 require 'json'
-require './lib/visual_api_exception'
+require 'visual_api_exception'
 
 module TuringAPI
   class VisualAPI
