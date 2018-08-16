@@ -30,13 +30,13 @@ Initialize
 
 api_key = 'your_api_key' # You can get API key when you login at: https://www.turingiq.com/login
 mode = 'live'            # the mode can be either `live` or `sandbox`. Default mode is `live`.
-@visual = Turing::VisualAPI.new('api_key', 'mode')
+@visual = TuringAPI::VisualAPI.new('api_key', 'mode')
 ```
 
 This library uses namespacing. When instantiating the object, you need to either use the fully qualified namespace:
 
 ```ruby
-@visual = Turing::VisualAPI.new('your_api_key')
+@visual = TuringAPI::VisualAPI.new('your_api_key')
 ```
 
 Or alias it:
@@ -44,7 +44,7 @@ Or alias it:
 ```ruby
 require './lib/VisualAPI'
 
-@visual = Turing::VisualAPI.new(ENV['your_api_key'])
+@visual = TuringAPI::VisualAPI.new(ENV['your_api_key'])
 ```
 
 Autocrop
